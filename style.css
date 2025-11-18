@@ -69,6 +69,13 @@ body {
   transform: scale(1.05);
 }
 
+.language-switcher {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.9rem;
+}
+
 section {
   padding: 2rem;
   text-align: center;
