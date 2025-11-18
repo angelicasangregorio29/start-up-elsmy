@@ -39,3 +39,5 @@ document.getElementById("lang").addEventListener("change", (e) => {
   document.querySelector(".dashboard-preview h3").textContent = t.dashboard;
   document.querySelector(".testimonials h3").textContent = t.testimonials;
 });
+
+<button id="voiceBtn" aria-label="Activate voice input">🎤 Speak</button>
