@@ -7,7 +7,22 @@ document.querySelectorAll('.cta-buttons button').forEach(btn => {
   });
 });
 
+
+
+/* Update language support*/
 let translations = {
+  en: {
+    headline: "Feel Safe. Feel Seen. Feel ELSMY.",
+    subtext: "Your emotional state matters. ELSMY protects you with intelligent emotional security.",
+    getStarted: "Get Started",
+    learnMore: "Learn How It Works",
+    howItWorks: "How It Works",
+    step1: "Connect your Security Emotional Sensor",
+    step2: "Let ELSMY analyze your emotional signals",
+    step3: "Receive real-time support and protection",
+    dashboard: "Emotional Dashboard Preview",
+    testimonials: "What Users Say"
+  },
   it: {
     headline: "Sentiti al sicuro. Sentiti vista. Sentiti ELSMY.",
     subtext: "Il tuo stato emotivo conta. ELSMY ti protegge con sicurezza emotiva intelligente.",
@@ -19,13 +34,12 @@ let translations = {
     step3: "Ricevi supporto e protezione in tempo reale",
     dashboard: "Anteprima del Cruscotto Emozionale",
     testimonials: "Cosa dicono gli utenti"
-  },
-  // Add more languages here...
+  }
 };
 
 document.getElementById("lang").addEventListener("change", (e) => {
-  let lang = e.target.value;
-  let t = translations[lang];
+  const lang = e.target.value;
+  const t = translations[lang];
   if (!t) return;
 
   document.querySelector(".hero h2").textContent = t.headline;
@@ -39,6 +53,8 @@ document.getElementById("lang").addEventListener("change", (e) => {
   document.querySelector(".dashboard-preview h3").textContent = t.dashboard;
   document.querySelector(".testimonials h3").textContent = t.testimonials;
 });
+
+/*Animation shift*/
 
 let voiceBtn = document.getElementById("voiceBtn");
 let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
