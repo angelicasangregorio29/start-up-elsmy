@@ -38,8 +38,8 @@ let translations = {
 };
 
 document.getElementById("lang").addEventListener("change", (e) => {
-  const lang = e.target.value;
-  const t = translations[lang];
+  let lang = e.target.value;
+  let t = translations[lang];
   if (!t) return;
 
   document.querySelector(".hero h2").textContent = t.headline;
@@ -73,7 +73,7 @@ recognition.onresult = (event) => {
   }
 };
 
-setInterval(() => {
+/*setInterval(() => {
   const states = [
     { emoji: "😊", label: "Calm", color: "#B8CBB8" },
     { emoji: "😟", label: "Anxious", color: "#F7C6D5" },
@@ -84,4 +84,20 @@ setInterval(() => {
   const el = document.querySelector(".state");
   el.textContent = `${state.emoji} Emotional State: ${state.label}`;
   el.style.backgroundColor = state.color;
-}, 6000);
+}, 6000);*/
+ 
+setInterval(() => {
+let moodStates = [
+  { emoji: "😊", label: "Calm", color: "#B8CBB8" },
+  { emoji: "😟", label: "Anxious", color: "#F7C6D5" },
+  { emoji: "😌", label: "Relieved", color: "#FCEBB8" },
+  { emoji: "😠", label: "Frustrated", color: "#3A3D7C" },
+  { emoji: "🥹", label: "Touched", color: "#F7C6D5" },
+  { emoji: "😎", label: "Empowered", color: "#3A3D7C" }
+];
+
+  let state = moodStates[Math.floor(Math.random() * moodStates.length)];
+  let el = document.querySelector(".state");
+  el.textContent = `${state.emoji} Emotional State: ${state.label}`;
+  el.style.backgroundColor = state.color;
+}, 7000);
